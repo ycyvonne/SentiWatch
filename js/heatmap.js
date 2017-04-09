@@ -61,7 +61,7 @@ function loadHeatMap(data){
   {week: 6, weekDay: 2, value: 5},
   {week: 7, weekDay: 2, value: 20},
   {week: 1, weekDay: 2, value: 30},
-  {week: 1, weekDay: 3, value: 60},
+  {week: 1, weekDay: 3, value: 40},
 ]
 
 console.log('data', data)
