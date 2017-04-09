@@ -1,51 +1,43 @@
-<!-- <!doctype html>
-<html>
-  <head>
-    <title>SentiWatch</title>
-    <script src="popup.js"></script>
-  </head>
-  <body>
-    <h1>SentiWatch</h1>
-    <button id="checkPage">Check now!</button>
-  </body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Streamgraph</title>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/c3.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    <link href='tabs.css' rel='stylesheet' type='text/css' />
+    <link href='css/tabs.css' rel='stylesheet' type='text/css' />
   </head>
   <body>
 
     <div id="Current" class="tabcontent" style="display:block;">
-      <h3 style="text-align:center">Sentiment</h3>
-      <p style="text-align:center">Evaluate your current sentiment.</p>
-      <!-- <button onclick="transition()">Update</button> -->
+      <h5 style="text-align:center">Daily Sentiment</h5>
+      <p style="text-align:center">Evaluate your current sentiment</p>
+      <div id="dailychart"></div>
     </div>
 
     <div id="History" class="tabcontent">
-      <h3>History</h3>
-      <p>Look at your past sentiment history.</p>
+      <h5>History</h5>
+      <p>Look at your past sentiment history</p>
     </div>
 
     <div id="Settings" class="tabcontent">
-      <h3>Settings</h3>
-      <p>Change your settings.</p>
+      <h5>Settings</h5>
+      <p>Change your settings</p>
     </div>
 
     <div class="tab">
-      <button class="tablinks active" style="width:33%" id="CurrentOpen">Current</button>
+      <button class="tablinks active" style="width:33%" id="CurrentOpen">Daily</button>
       <button class="tablinks" style="width:33%" id="HistoryOpen">History</button>
       <button class="tablinks" style="width:33%" id="SettingsOpen">Settings</button>
     </div>
 
     <svg width="500" height="500"></svg>
     <script src='tabs.js'></script>
+    <!-- daily chart -->
+    <script src="d3/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="/js/dailychart.js" charset="utf-8"></script>
     <!-- <script src='d3/d3.v4.min.js'></script> -->
     <!-- <script src='popup_graph.js'></script> -->
 
