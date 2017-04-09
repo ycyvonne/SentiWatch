@@ -1,11 +1,52 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
   <head>
-    <title>GTmetrix Analyzer</title>
+    <title>SentiWatch</title>
     <script src="popup.js"></script>
   </head>
   <body>
-    <h1>GTmetrix Analyzer</h1>
-    <button id="checkPage">Check this page now!</button>
+    <h1>SentiWatch</h1>
+    <button id="checkPage">Check now!</button>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Streamgraph</title>
+    <link href='tabs.css' rel='stylesheet' type='text/css' />
+
+  </head>
+  <body>
+
+    <div id="Current" class="tabcontent" style="display:block;">
+      <h3>Current</h3>
+      <p>Evaluate your current sentiment.</p>
+      <!-- <button onclick="transition()">Update</button> -->
+    </div>
+
+    <div id="History" class="tabcontent">
+      <h3>History</h3>
+      <p>Look at your past sentiment history.</p>
+    </div>
+
+    <div id="Settings" class="tabcontent">
+      <h3>Settings</h3>
+      <p>Change your settings.</p>
+    </div>
+
+    <div class="tab">
+      <button class="tablinks active" style="width:33%" id="CurrentOpen">Current</button>
+      <button class="tablinks" style="width:33%" id="HistoryOpen">History</button>
+      <button class="tablinks" style="width:33%" id="SettingsOpen">Settings</button>
+    </div>
+
+    <svg width="500" height="500"></svg>
+    <script src='tabs.js'></script>
+    <!-- <script src='d3/d3.v4.min.js'></script> -->
+    <!-- <script src='popup_graph.js'></script> -->
+
   </body>
 </html>

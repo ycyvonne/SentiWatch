@@ -1,26 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('checkPage');
-  checkPageButton.addEventListener('click', function() {
-    chrome.tabs.getSelected(null, function(tab) {
-      d = document;
-
-      var f = d.createElement('form');
-      f.action = 'http://gtmetrix.com/analyze.html?bm';
-      f.method = 'post';
-      var i = d.createElement('input');
-      i.type = 'hidden';
-      i.name = 'url';
-      i.value = tab.url;
-      f.appendChild(i);
-      d.body.appendChild(f);
-      f.submit();
-    });
-  }, false);
-}, false);
-
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-
 var n = 20, // number of layers
     m = 200, // number of samples per layer
     k = 10; // number of bumps per layer
@@ -89,5 +66,3 @@ function bump(a, n) {
     a[i] += x * Math.exp(-w * w);
   }
 }
-
-</script>
