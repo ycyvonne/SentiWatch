@@ -1,5 +1,6 @@
 {
   "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://www.google.com; 'unsafe-eval'; object-src 'self'",
   "name": "Test Extension",
   "version": "0.1",
   "background": {
@@ -10,14 +11,15 @@
     "matches": [
       "<all_urls>"
     ],
-    "js": ["jquery-3.2.0.min.js", "content.js"]
+    "js": ["js/jquery-3.2.0.min.js", "content.js"]
   }],
  "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "icon16.png",
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage"
+
+    "storage", "tabs"
   ],
   "web_accessible_resources": ["jquery-3.2.0.min.js", "inject.js"]
 }

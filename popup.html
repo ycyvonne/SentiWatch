@@ -1,11 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>GTmetrix Analyzer</title>
-    <script src="popup.js"></script>
+    <meta charset="utf-8">
+    <title>Streamgraph</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/c3.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='css/tabs.css' rel='stylesheet' type='text/css' />
   </head>
   <body>
-    <h1>GTmetrix Analyzer</h1>
-    <button id="checkPage">Check this page now!</button>
+
+    <div id="Current" class="tabcontent" style="display:block;">
+      <h5 style="text-align:center">Daily Sentiment</h5>
+      <p style="text-align:center">Evaluate your current sentiment</p>
+      <div id="dailychart"></div>
+    </div>
+
+    <div id="History" class="tabcontent">
+      <h5>History</h5>
+      <p>Look at your past sentiment history</p>
+    </div>
+
+    <div id="Settings" class="tabcontent">
+      <h5>Settings</h5>
+      <p>Change your settings</p>
+    </div>
+
+    <div class="tab">
+      <button class="tablinks active" style="width:33%" id="CurrentOpen">Daily</button>
+      <button class="tablinks" style="width:33%" id="HistoryOpen">History</button>
+      <button class="tablinks" style="width:33%" id="SettingsOpen">Settings</button>
+    </div>
+
+    <svg width="500" height="500"></svg>
+    <script src='tabs.js'></script>
+    <!-- daily chart -->
+    <script src="d3/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="/js/dailychart.js" charset="utf-8"></script>
+    <!-- <script src='d3/d3.v4.min.js'></script> -->
+    <!-- <script src='popup_graph.js'></script> -->
+
   </body>
 </html>
