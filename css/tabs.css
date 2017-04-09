@@ -48,6 +48,14 @@ div.tab button {
     letter-spacing: 2px;
     font-family: 'roboto', sans-serif;
     border-bottom: 5px solid rgba(0,0,0,0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.tab button img{
+    width: 14px;
 }
 
 
