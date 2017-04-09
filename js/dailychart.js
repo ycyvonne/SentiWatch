@@ -14,7 +14,7 @@ var chart = c3.generate({
         x: 'x',
         columns: [
             xArr,
-            ['positive', 300, 350, 300, 0, 0, 0],
+            ['positive', 300, 350, 300, 10, 20, 70],
             ['negative', 130, 100, 140, 200, 150, 50]
         ],
         types: {
