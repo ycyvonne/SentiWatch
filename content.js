@@ -135,7 +135,7 @@ function appendNotification(happy, score){
   if($('.notification-wrapper') == null)
     $('body').append('<div class="notification-wrapper" style="pointer-events: none; position: absolute; width: 100%; height: 100%"></div>');
 
-  var content = '<div id="DS-icon" style="opacity: 0;z-index: 10000000; text-align: center; font-size: 30px; right: 10px; top: 25px; position: fixed; width: 30px; height: 30px; padding: 20px; color: white; border-radius: 5px; background: ';
+  var content = '<div id="DS-icon" style="opacity: 0;z-index: 10000000; text-align: center; font-size: 30px; right: 10px; top: 25px; position: fixed; padding: 20px; color: white; border-radius: 5px; background: ';
   content += happy ? '#53b6f1; ">☺</div>' : '#da5c5c; ">☹</div>';
   console.log('appending...')
   $('.notification-wrapper').append(content);
@@ -196,7 +196,7 @@ function setStorage(currentSentence, keyPhrases, data){
     allData.data.push(currentObject);
     chrome.storage.sync.set({'data': JSON.stringify(allData)}, function() {
     });
-    console.log('[content.js] current data stored: ', allData);
+//    console.log('[content.js] current data stored: ', allData);
 
   });
   
@@ -210,12 +210,12 @@ function setStorage(currentSentence, keyPhrases, data){
 chrome.storage.onChanged.addListener(function(changes, namespace) {
     for (key in changes) {
       var storageChange = changes[key];
-      console.log('Storage key "%s" in namespace "%s" changed. ' +
+    /*  console.log('Storage key "%s" in namespace "%s" changed. ' +
                   'Old value was "%s", new value is "%s".',
                   key,
                   namespace,
                   storageChange.oldValue,
-                  storageChange.newValue);
+                  storageChange.newValue);*/
     }
 });
 
