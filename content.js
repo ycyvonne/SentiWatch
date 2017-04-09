@@ -145,6 +145,7 @@ function setStorage(currentSentence, keyPhrases, data){
         number: d.getMonth(),
         text: month[d.getMonth()]
       },
+      day: 10,
       weekDay: {
         number: d.getDay(), //0-6
         text: week[d.getDay()] //sun -> saturday
@@ -168,8 +169,8 @@ function setStorage(currentSentence, keyPhrases, data){
 }
 
 //reset for now
-chrome.storage.sync.set({'data': ''}, function() {
-});
+//chrome.storage.sync.set({'data': ''}, function() {
+//});
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
     for (key in changes) {
