@@ -161,7 +161,7 @@ function setStorage(currentSentence, keyPhrases, data){
     allData.data.push(currentObject);
     chrome.storage.sync.set({'data': JSON.stringify(allData)}, function() {
     });
-    console.log('current data stored: ', allData);
+    console.log('[content.js] current data stored: ', allData);
 
   });
   

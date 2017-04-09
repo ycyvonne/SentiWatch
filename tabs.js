@@ -28,3 +28,15 @@ var loadHandler=function() {
 }
 
 window.addEventListener('load', loadHandler);
+
+document.addEventListener('click', function(){
+     console.log('clicked')
+    chrome.storage.sync.get('data', function(data) {
+
+        allData = data.data.trim().length != 0 ? JSON.parse(data.data) : {data: []};
+
+        console.log('[tabs.js] current data stored: ', allData);
+
+    });
+})
+
