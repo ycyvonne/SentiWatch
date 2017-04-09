@@ -17,6 +17,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-      "storage"
-    ]
+    "storage"
+  ],
+  "web_accessible_resources": ["jquery-3.2.0.min.js", "inject.js"]
 }
