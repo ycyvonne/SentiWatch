@@ -72,7 +72,7 @@ var margin = { top: 50, right: 0, bottom: 100, left: 30 },
     gridSize = Math.floor(width / 24),
     legendElementWidth = gridSize*2,
     buckets = 9,
-    colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
+    colors = ["#1b91d7","#53b6f1","#56b4ee","#6fa3d2","#8e8fb0","#b0798b","#b0798b","#cc656c",'#da5c5c'], // alternatively colorbrewer.YlGnBu[9]
     weekDays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
     weeksOld = ["", "2 wks ago", "1 wk ago", "Now"];
 
