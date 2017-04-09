@@ -30,3 +30,27 @@ var loadHandler=function() {
 window.addEventListener('load', loadHandler);
 
 
+chrome.storage.sync.get('notifications', function(notif){
+
+    if(typeof notif.data === 'undefined'){
+        console.log('undefined')
+      chrome.storage.sync.set({'notifications': 'T'}, function(){});
+    }
+    else{
+      chrome.storage.sync.get('notifications', function(notif){
+        console.log('not undefined start')
+          if(notif.notifications == 'F')
+            document.querySelector('#notif-check').checked = true; //means false
+      });
+    }
+});
+
+document.querySelector('.slider.round').addEventListener('click', function(){
+    var isChecked = !document.querySelector('#notif-check').checked;
+
+    var checked = isChecked ? 'T' : 'F';
+    chrome.storage.sync.set({'notifications': checked}, function(){    
+    });
+
+});
+

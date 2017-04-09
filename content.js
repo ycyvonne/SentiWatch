@@ -30,7 +30,11 @@ document.addEventListener(
   function (ev) {
   	if(ev.key.length == 1)
    		runningInput += ev.key;
-   	updateSentence(runningInput, '.', false);
+   	if(!updateSentence(runningInput, '.', false)){
+      if(!updateSentence(runningInput, '!', false)){
+        updateSentence(runningInput, '?', false);
+      }
+    }
   },
   true
 );
@@ -68,7 +72,11 @@ function updateSentence(val, delim, override){
 
 		currentSentence = '';
 
+    return true;
+
 	}
+
+  return false;
 }
 
 function getSentiment(currentSentence, callback){
@@ -120,11 +128,37 @@ function getKeyWords(currentSentence, callback, dataSoFar){
 
 }
 
+$('body').append('<div class="notification-wrapper" style="pointer-events: none; position: absolute; width: 100%; height: 100%"></div>');
+
+function appendNotification(happy, score){
+
+  if($('.notification-wrapper') == null)
+    $('body').append('<div class="notification-wrapper" style="pointer-events: none; position: absolute; width: 100%; height: 100%"></div>');
+
+  var content = '<div id="DS-icon" style="opacity: 0;z-index: 10000000; text-align: center; font-size: 30px; right: 10px; top: 25px; position: fixed; width: 30px; height: 30px; padding: 20px; color: white; border-radius: 5px; background: ';
+  content += happy ? '#53b6f1; ">☺</div>' : '#da5c5c; ">☹</div>';
+  console.log('appending...')
+  $('.notification-wrapper').append(content);
+
+  $('#DS-icon').animate({top: '10px', opacity: 1}, 200);
+
+  setTimeout(function(){
+    $('#DS-icon').animate({top: '25px', opacity: 0}, 200, function(){
+      setTimeout(function(){$('.notification-wrapper').html('');}, 200);
+    });
+  }, 2000);
+}
+
 function setStorage(currentSentence, keyPhrases, data){
   var scoreRaw = data.documents[0].score;
   var positive = scoreRaw > 0.5;
   var score = positive ? scoreRaw : 1 - scoreRaw; //0 to 1
 
+  chrome.storage.sync.get('notifications', function(notif){
+    if(notif.notifications == 'T')
+      appendNotification(positive, score);
+  });
+  
   var d = new Date(); // for now
 
   var week  = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -172,6 +206,7 @@ function setStorage(currentSentence, keyPhrases, data){
 //chrome.storage.sync.set({'data': ''}, function() {
 //});
 
+
 chrome.storage.onChanged.addListener(function(changes, namespace) {
     for (key in changes) {
       var storageChange = changes[key];
@@ -183,3 +218,5 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
                   storageChange.newValue);
     }
 });
+
+

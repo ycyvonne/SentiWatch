@@ -10,8 +10,8 @@ var chart = c3.generate({
             negative: 'area-spline'
         },
          colors: {
-           positive: 'purple',
-           negative: 'red'
+           positive: '#53b6f1',
+           negative: '#da5c5c'
          }
     }
 });
