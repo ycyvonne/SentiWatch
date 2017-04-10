@@ -128,7 +128,7 @@ function getKeyWords(currentSentence, callback, dataSoFar){
 
 }
 
-$('body').append('<div class="notification-wrapper" style="pointer-events: none; position: absolute; width: 100%; height: 100%"></div>');
+$('body').append('<div class="notification-wrapper" style="pointer-events: none; position: absolute;"></div>');
 
 function appendNotification(happy, score){
 
